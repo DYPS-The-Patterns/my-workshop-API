@@ -1,6 +1,6 @@
 import { AutoMap } from '@automapper/classes';
 
-export class CreateWorkshopDto {
+export class UpdateWorkshop {
   @AutoMap()
   id: number;
   @AutoMap()
