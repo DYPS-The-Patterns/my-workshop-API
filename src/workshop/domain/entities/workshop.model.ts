@@ -1,10 +1,10 @@
 import { AutoMap } from '@automapper/classes';
 
-export class UpdateWorkshop {
+export class Workshop {
   @AutoMap()
   id: number;
   @AutoMap()
   name: string;
   @AutoMap()
-  owner_id: number;
+  owner_id: string;
 }
