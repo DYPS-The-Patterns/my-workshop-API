@@ -7,7 +7,7 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('My Workshop')
-    .setDescription('My Workshop API description')
+    .setDescription('My Workshop API, made with Nest.js and TypeORM, with MySQL Database connection.')
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, config);

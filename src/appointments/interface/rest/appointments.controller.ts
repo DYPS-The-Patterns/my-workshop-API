@@ -16,7 +16,9 @@ import { Appointment } from '../../domain/entities/appointment.model';
 import { AppointmentDto } from '../../application/transform/dto/appointment.dto';
 import { CreateAppointmentDto } from '../../application/transform/dto/create-appointment.dto';
 import { UpdateAppointmentDto } from '../../application/transform/dto/update-appointment.dto';
+import { ApiTags } from "@nestjs/swagger";
 
+@ApiTags("Appointments")
 @Controller('api/v1/appointments')
 export class AppointmentsController {
   constructor(

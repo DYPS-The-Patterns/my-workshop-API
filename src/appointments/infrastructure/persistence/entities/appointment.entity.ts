@@ -13,11 +13,11 @@ export class AppointmentEntity {
 
   @AutoMap()
   @Column()
-  id_driver: number;
+  driverId: number;
 
   @AutoMap()
   @Column()
-  id_owner: number;
+  ownerId: number;
 
   @AutoMap()
   @Column()

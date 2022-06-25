@@ -13,5 +13,5 @@ export class WorkshopEntity {
 
   @AutoMap()
   @Column()
-  owner_id: string;
+  ownerId: string;
 }
