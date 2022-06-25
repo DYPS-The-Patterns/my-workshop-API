@@ -1,4 +1,5 @@
 import {
+  Body,
   Controller,
   Delete,
   Get,
@@ -38,7 +39,7 @@ export class WorkshopsController {
   }
 
   @Post()
-  async createWorkshop(@Body() createAppointmentDto: CreateWorkshopDto) {
+  async createWorkshop(@Body() createWorkshopDto: CreateWorkshopDto) {
     const workshop = this.mapper.map(
       createWorkshopDto,
       CreateWorkshopDto,
