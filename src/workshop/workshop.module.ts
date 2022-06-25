@@ -3,6 +3,6 @@ import { WorkshopsController } from './interface/rest/workshops.controller';
 
 @Module({
   providers: [WorkshopService],
-  controllers: [WorkshopsController]
+  controllers: [WorkshopsController],
 })
 export class WorkshopModule {}

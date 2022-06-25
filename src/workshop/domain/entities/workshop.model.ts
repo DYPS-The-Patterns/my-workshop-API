@@ -6,5 +6,5 @@ export class Workshop {
   @AutoMap()
   name: string;
   @AutoMap()
-  owner_id: string;
+  ownerId: number;
 }

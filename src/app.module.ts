@@ -5,17 +5,16 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { AutomapperModule } from '@automapper/nestjs';
 import { classes } from '@automapper/classes';
-import { WorkshopModule } from './workshop/workshop.module';
 import { AppointmentsModule } from './appointments/appointments.module';
-
+import { WorkshopModule } from './workshop/workshop.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(),
     AutomapperModule.forRoot({ strategyInitializer: classes() }),
     UsersModule,
+    AppointmentsModule,
     WorkshopModule,
-    AppointmentsModule
   ],
   controllers: [AppController],
   providers: [AppService],

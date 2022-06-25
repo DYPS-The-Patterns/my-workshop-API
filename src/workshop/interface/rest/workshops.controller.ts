@@ -1,11 +1,20 @@
-import { Controller, Delete, Get, HttpStatus, Param, Patch, Post, Put } from "@nestjs/common";
+import {
+  Controller,
+  Delete,
+  Get,
+  HttpStatus,
+  Param,
+  Patch,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { WorkshopService } from '../../domain/services/workshop.service';
 import { InjectMapper } from '@automapper/nestjs';
 import { Mapper } from '@automapper/core';
-import { Workshop } from "../../domain/entities/workshop.model";
-import { WorkshopDto } from "../../application/transform/dto/workshop.dto";
-import { CreateWorkshopDto } from "../../application/transform/dto/create-workshop.dto";
-import { UpdateWorkshopDto } from "../../application/transform/dto/update-workshop.dto";
+import { Workshop } from '../../domain/entities/workshop.model';
+import { WorkshopDto } from '../../application/transform/dto/workshop.dto';
+import { CreateWorkshopDto } from '../../application/transform/dto/create-workshop.dto';
+import { UpdateWorkshopDto } from '../../application/transform/dto/update-workshop.dto';
 
 @Controller('api/v1/workshops')
 export class WorkshopsController {
