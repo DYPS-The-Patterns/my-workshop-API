@@ -16,7 +16,9 @@ import { Workshop } from '../../domain/entities/workshop.model';
 import { WorkshopDto } from '../../application/transform/dto/workshop.dto';
 import { CreateWorkshopDto } from '../../application/transform/dto/create-workshop.dto';
 import { UpdateWorkshopDto } from '../../application/transform/dto/update-workshop.dto';
+import { ApiTags } from "@nestjs/swagger";
 
+@ApiTags("Workshops")
 @Controller('api/v1/workshops')
 export class WorkshopsController {
   constructor(
