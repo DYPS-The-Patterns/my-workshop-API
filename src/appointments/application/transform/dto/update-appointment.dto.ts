@@ -1,14 +1,17 @@
 import { AutoMap } from '@automapper/classes';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class UpdateAppointmentDto {
   @AutoMap()
-  id: number;
-  @AutoMap()
+  @ApiProperty()
   name: string;
   @AutoMap()
-  id_driver: number;
+  @ApiProperty()
+  driverId: number;
   @AutoMap()
-  id_owner: number;
+  @ApiProperty()
+  ownerId: number;
   @AutoMap()
+  @ApiProperty()
   date: string;
 }

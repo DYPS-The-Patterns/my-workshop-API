@@ -11,10 +11,12 @@ export class workshopProfile extends AutomapperProfile {
     super(mapper);
   }
   get profile(): MappingProfile {
-    createMap(mapper, Workshop, WorkshopDto);
-    createMap(mapper, Workshop, WorkshopEntity);
-    createMap(mapper, WorkshopEntity, Workshop);
-    createMap(mapper, CreateWorkshopDto, Workshop);
-    createMap(mapper, UpdateWorkshopDto, Workshop);
+    return (mapper) => {
+      createMap(mapper, Workshop, WorkshopDto);
+      createMap(mapper, Workshop, WorkshopEntity);
+      createMap(mapper, WorkshopEntity, Workshop);
+      createMap(mapper, CreateWorkshopDto, Workshop);
+      createMap(mapper, UpdateWorkshopDto, Workshop);
+    };
   }
 }
