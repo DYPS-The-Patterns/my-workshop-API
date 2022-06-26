@@ -14,8 +14,8 @@ export class ChatsEntityRepository implements ChatsRepository {
     private readonly mapper: Mapper,
   ) {}
 
-  async create(user: ChatModel): Promise<ChatModel> {
-    let chatEntity = this.mapper.map(user, ChatModel, ChatEntity);
+  async create(chat: ChatModel): Promise<ChatModel> {
+    let chatEntity = this.mapper.map(chat, ChatModel, ChatEntity);
     chatEntity = this.ChatsRepository.create(chatEntity);
     await this.ChatsRepository.save(chatEntity);
     return this.mapper.map(chatEntity, ChatEntity, ChatModel);
