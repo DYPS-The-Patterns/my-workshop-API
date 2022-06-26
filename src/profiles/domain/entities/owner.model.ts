@@ -1,5 +1,6 @@
-import { ApiProperty } from "@nestjs/swagger";
-import { AutoMap } from "@automapper/classes";
+import { ApiProperty } from '@nestjs/swagger';
+import { AutoMap } from '@automapper/classes';
+import { User } from '../../../security/domain/entities/user.model';
 
 export class Owner {
   @ApiProperty()
@@ -11,4 +12,10 @@ export class Owner {
   @ApiProperty()
   @AutoMap()
   cellphone: number;
+  @ApiProperty()
+  @AutoMap()
+  user: User;
+  @ApiProperty()
+  @AutoMap()
+  userId: number;
 }

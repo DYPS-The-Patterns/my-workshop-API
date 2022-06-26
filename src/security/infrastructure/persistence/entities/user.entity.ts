@@ -1,6 +1,8 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { createHmac } from 'crypto';
 import { AutoMap } from '@automapper/classes';
+import { OwnerEntity } from '../../../../profiles/infrastructure/persistence/entities/owner.entity';
+import { DriverEntity } from '../../../../profiles/infrastructure/persistence/entities/driver.entity';
 
 @Entity('users')
 export class UserEntity {
@@ -23,4 +25,10 @@ export class UserEntity {
   @AutoMap()
   @Column()
   password: string;
+
+  @OneToOne(() => OwnerEntity, (owner) => owner.user)
+  owner: OwnerEntity;
+
+  @OneToOne(() => DriverEntity, (driver) => driver.user)
+  driver: DriverEntity;
 }

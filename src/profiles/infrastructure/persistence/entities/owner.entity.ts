@@ -1,5 +1,13 @@
 import { AutoMap } from '@automapper/classes';
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { UserEntity } from '../../../../security/infrastructure/persistence/entities/user.entity';
+import { User } from '../../../../security/domain/entities/user.model';
 
 @Entity('owners')
 export class OwnerEntity {
@@ -12,4 +20,11 @@ export class OwnerEntity {
   @AutoMap()
   @Column()
   cellphone: number;
+  @Column()
+  @AutoMap()
+  userId: number;
+  @AutoMap()
+  @OneToOne(() => UserEntity, (user) => user.owner, { onDelete: 'CASCADE' })
+  @JoinColumn()
+  user: User;
 }
