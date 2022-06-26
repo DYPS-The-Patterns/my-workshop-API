@@ -1,13 +1,14 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity } from 'typeorm';
+import { AutoMap } from '@automapper/classes';
 
 @Entity('messages')
 export class MessageEntity {
-  @PrimaryGeneratedColumn()
+  @AutoMap()
   id: number;
-  @Column()
+  @AutoMap()
   content: string;
-  @Column()
+  @AutoMap()
   senderID: number;
-  @Column()
+  @AutoMap()
   receiverID: number;
 }

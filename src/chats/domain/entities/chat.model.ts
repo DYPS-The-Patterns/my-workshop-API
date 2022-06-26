@@ -1,8 +1,8 @@
 import { Entity } from 'typeorm';
 import { AutoMap } from '@automapper/classes';
 export class message {}
-@Entity('chats')
-export class ChatEntity {
+@Entity('ChatModel')
+export class ChatModel {
   @AutoMap()
   chatid: number;
 
