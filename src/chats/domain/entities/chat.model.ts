@@ -4,7 +4,7 @@ export class message {}
 @Entity('ChatModel')
 export class ChatModel {
   @AutoMap()
-  chatid: number;
+  chatId: number;
 
   @AutoMap()
   name: string;

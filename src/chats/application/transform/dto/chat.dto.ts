@@ -1,6 +1,5 @@
-export class message {}
-export class ChatDto {
-  chatid: number;
+export class UpdateChatDto {
+  chatId: number;
   name: string;
   messages: message;
 }

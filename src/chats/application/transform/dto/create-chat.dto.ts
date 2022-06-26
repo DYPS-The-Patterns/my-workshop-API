@@ -1,6 +1,6 @@
 export class message {}
-export class ChatDto {
-  chatid: number;
+export class CreateChatDto {
+  chatId: number;
   name: string;
   messages: message;
 }
