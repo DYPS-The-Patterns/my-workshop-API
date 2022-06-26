@@ -1,5 +1,5 @@
 import { AutoMap } from '@automapper/classes';
-import { ApiProperty } from "@nestjs/swagger";
+import { ApiProperty } from '@nestjs/swagger';
 
 export class User {
   @ApiProperty()
@@ -7,10 +7,13 @@ export class User {
   id: number;
   @ApiProperty()
   @AutoMap()
-  name: string;
+  username: string;
   @ApiProperty()
   @AutoMap()
   email: string;
+  @ApiProperty()
+  @AutoMap()
+  name: string;
   @ApiProperty()
   @AutoMap()
   password: string;

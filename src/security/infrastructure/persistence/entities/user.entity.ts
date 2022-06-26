@@ -12,11 +12,15 @@ export class UserEntity {
 
   @AutoMap()
   @Column()
-  name: string;
+  username: string;
 
   @AutoMap()
   @Column()
   email: string;
+
+  @Column()
+  @AutoMap()
+  name: string;
 
   hashPassword() {
     this.password = createHmac('sha256', this.password).digest('hex');
