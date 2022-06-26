@@ -7,7 +7,6 @@ import { AutomapperModule } from '@automapper/nestjs';
 import { classes } from '@automapper/classes';
 import { AppointmentsModule } from './appointments/appointments.module';
 import { WorkshopModule } from './workshop/workshop.module';
-import { ChatsModule } from './chats/chats.module';
 import { OwnersModule } from './profiles/owners.module';
 import { DriversModule } from './profiles/drivers.module';
 
@@ -18,7 +17,6 @@ import { DriversModule } from './profiles/drivers.module';
     UsersModule,
     AppointmentsModule,
     WorkshopModule,
-    ChatsModule,
     OwnersModule,
     DriversModule,
   ],
