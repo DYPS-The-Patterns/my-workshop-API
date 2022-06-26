@@ -7,6 +7,7 @@ import { AutomapperModule } from '@automapper/nestjs';
 import { classes } from '@automapper/classes';
 import { AppointmentsModule } from './appointments/appointments.module';
 import { WorkshopModule } from './workshop/workshop.module';
+import { ChatsModule } from './chats/chats.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { WorkshopModule } from './workshop/workshop.module';
     UsersModule,
     AppointmentsModule,
     WorkshopModule,
+    ChatsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
