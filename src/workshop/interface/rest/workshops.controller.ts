@@ -1,4 +1,5 @@
 import {
+  Body,
   Controller,
   Delete,
   Get,
@@ -15,7 +16,9 @@ import { Workshop } from '../../domain/entities/workshop.model';
 import { WorkshopDto } from '../../application/transform/dto/workshop.dto';
 import { CreateWorkshopDto } from '../../application/transform/dto/create-workshop.dto';
 import { UpdateWorkshopDto } from '../../application/transform/dto/update-workshop.dto';
+import { ApiTags } from "@nestjs/swagger";
 
+@ApiTags("Workshops")
 @Controller('api/v1/workshops')
 export class WorkshopsController {
   constructor(
@@ -38,7 +41,7 @@ export class WorkshopsController {
   }
 
   @Post()
-  async createWorkshop(@Body() createAppointmentDto: CreateWorkshopDto) {
+  async createWorkshop(@Body() createWorkshopDto: CreateWorkshopDto) {
     const workshop = this.mapper.map(
       createWorkshopDto,
       CreateWorkshopDto,
