@@ -1,4 +1,4 @@
-import { ChatsEntity } from './chats.entity';
+import { ChatsEntity } from './chat.entity';
 
 describe('ChatsEntity', () => {
   it('should be defined', () => {
