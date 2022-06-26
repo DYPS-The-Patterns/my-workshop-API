@@ -1,34 +1,33 @@
-import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { ChatEntity } from '../../infrastructure/persistence/entities/chat.entity';
-import { Repository } from 'typeorm';
-import { ChatDto } from '../../application/Transform/dto/chat.dto';
+import { Inject, Injectable } from '@nestjs/common';
+import {
+  CHATS_REPOSITORY,
+  ChatsRepository,
+} from '../repositories/chats.repository';
+import { ChatModel } from '../entities/chat.model';
 
 @Injectable()
 export class ChatsService {
   constructor(
-    @InjectRepository(ChatEntity)
-    private ChatsRepository: Repository<ChatEntity>,
+    @Inject(CHATS_REPOSITORY)
+    private readonly chatsRepository: ChatsRepository,
   ) {}
 
   async getAll() {
-    return await this.ChatsRepository.find();
+    return await this.chatsRepository.findAll();
   }
 
-  async create(data: ChatDto) {
-    const chat = this.ChatsRepository.create(data);
-    await this.ChatsRepository.save(data);
-    return chat;
+  async create(chat: ChatModel) {
+    return await this.chatsRepository.create(chat);
   }
 
   async getById(id: number) {
-    return await this.ChatsRepository.findOne({ where: { chatid: id } });
+    return await this.chatsRepository.findById(id);
   }
-  async update(id: number, chat: ChatEntity) {
-    return await this.ChatsRepository.update(id, chat);
+  async update(id: number, chat: ChatModel) {
+    return await this.chatsRepository.update(id, chat);
   }
 
   async delete(id: number) {
-    return await this.ChatsRepository.delete(id);
+    return await this.chatsRepository.delete(id);
   }
 }
