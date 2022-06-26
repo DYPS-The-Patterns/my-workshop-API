@@ -1,11 +1,17 @@
 import { AutoMap } from '@automapper/classes';
 import { ApiProperty } from '@nestjs/swagger';
 
-export class UpdateWorkshopDto {
+export class CreateUserDto {
+  @AutoMap()
+  @ApiProperty()
+  username: string;
+  @ApiProperty()
+  @AutoMap()
+  email: string;
   @ApiProperty()
   @AutoMap()
   name: string;
   @ApiProperty()
   @AutoMap()
-  ownerId: number;
+  password: string;
 }
