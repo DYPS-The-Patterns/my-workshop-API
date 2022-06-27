@@ -3,7 +3,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { InventoryEntity } from '../entities/inventory.entity';
 import { Repository } from 'typeorm';
 import { InventoryDto } from '../../application/transform/dto/inventory.dto';
-import { StorageID } from '../entities/inventory.entity';
 
 @Injectable()
 export class InventoryService {
@@ -19,17 +18,17 @@ export class InventoryService {
     await this.inventoryRepository.save(data);
     return inventory;
   }
-  async findByID(id_code: StorageID): Promise<InventoryDto> {
+  async findByID(id: number): Promise<InventoryEntity> {
     return await this.inventoryRepository.findOne({
-      where: { id_code: id_code },
+      where: { id: id },
     });
   }
-  async update(id_code: StorageID, data: Partial<InventoryDto>) {
-    await this.inventoryRepository.update({ id_code }, data);
-    return await this.inventoryRepository.findOne({ id_code });
+  async update(id: number, data: Partial<InventoryDto>) {
+    await this.inventoryRepository.update({ id }, data);
+    return await this.inventoryRepository.findOne({ id });
   }
-  async delete(id_code: StorageID) {
-    await this.inventoryRepository.delete({ id_code });
+  async delete(id: number) {
+    await this.inventoryRepository.delete({ id });
     return { deleted: true };
   }
 }

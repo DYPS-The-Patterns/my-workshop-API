@@ -2,22 +2,15 @@ import { Entity , Column , PrimaryGeneratedColumn} from "typeorm";
 import internal from "stream";
 
 @Entity('inventory')
-export class StorageID {
-  ID: string;
-}
-export class Component {
-  ID: string;
-  name: string;
-  info: string;
-  quantity: number;
-}
 export class InventoryEntity {
   @PrimaryGeneratedColumn()
-  place: Location;
+  id: number;
 
   @Column()
-  inv_components: Component;
+  name: string;
+  @Column()
+  description: string;
 
   @Column()
-  id_code: StorageID;
+  workshopId: number;
 }
